@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpidqonm60cge"]
+
+[ext_resource type="Script" path="res://Scripts/Dialoges.gd" id="1_orf5e"]
+[ext_resource type="Texture2D" uid="uid://csah27uay86pg" path="res://Icons/Dialog.png" id="2_8id74"]
+[ext_resource type="Theme" uid="uid://ber1ir3mp6gmj" path="res://Fonts/Pixel-Kenney.tres" id="3_wcwfv"]
+[ext_resource type="Texture2D" uid="uid://dchpe2pxrj8lm" path="res://Icons/kenney_onscreen-controls/Sprites/shaded-dark/shadedDark25.png" id="4_sxsd5"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_orf5e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -120.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_8id74")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -15.0
+offset_right = 184.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_wcwfv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "[Observando]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -52.0
+offset_right = 74.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_sxsd5")
+flat = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

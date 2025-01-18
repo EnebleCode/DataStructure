@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7fm8lvf0rifd"]
+
+[ext_resource type="Script" path="res://Scripts/Main-Scene.gd" id="1_7m1ao"]
+[ext_resource type="Texture2D" uid="uid://c3s3hytufw60j" path="res://spriteSheets/Enviroment/Portada.png" id="2_e1m0m"]
+[ext_resource type="Theme" uid="uid://ber1ir3mp6gmj" path="res://Fonts/Pixel-Kenney.tres" id="2_r6j4j"]
+[ext_resource type="Texture2D" uid="uid://cfvbiys4rw1n2" path="res://Icons/Options.png" id="3_xgqab"]
+
+[node name="Control" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7m1ao")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("2_e1m0m")
+
+[node name="Panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 0.0980392, 0.262745, 0.407843)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -119.0
+offset_right = 196.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_r6j4j")
+text = "Estructurando 
+Datos"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 170.0
+offset_right = 100.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_r6j4j")
+text = "Play"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 65.0
+offset_right = -20.0
+offset_bottom = 95.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("3_xgqab")
+expand_icon = true
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = -29.0
+grow_vertical = 0
+theme = ExtResource("2_r6j4j")
+text = "Quit"
+
+[connection signal="pressed" from="Panel/Button" to="." method="Play"]
+[connection signal="pressed" from="Panel/Button3" to="." method="Quit"]

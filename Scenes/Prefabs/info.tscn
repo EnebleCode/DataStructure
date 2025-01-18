@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ijw31t1fklb"]
+
+[ext_resource type="Script" path="res://Scripts/Info.gd" id="1_05ya2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dab5i"]
+size = Vector2(10, 10)
+
+[node name="Info" type="Node2D"]
+script = ExtResource("1_05ya2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dab5i")
+debug_color = Color(0.479134, 0.584934, 0.164489, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
